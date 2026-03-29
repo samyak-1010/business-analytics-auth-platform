@@ -1,0 +1,166 @@
+.authShell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top right, #dff5f7 0%, #f8fcff 48%, #fff9f2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.authShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 20%, rgba(18, 156, 181, 0.18), transparent 36%),
+    radial-gradient(circle at 85% 75%, rgba(255, 128, 0, 0.14), transparent 40%);
+  pointer-events: none;
+}
+
+.authForm {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 65, 85, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 2.5rem 2.2rem 2rem;
+  min-width: 360px;
+  max-width: 420px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  animation: slideUp 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.authForm h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(135deg, #0a8da8, #0d6482);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.authBrand {
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #0f6c80;
+  font-weight: 700;
+  margin-bottom: -0.25rem;
+}
+
+.authForm label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #3a4a55;
+  gap: 0.3rem;
+}
+
+.authForm input {
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #d5e2ea;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.authForm input:focus {
+  border-color: #0d95b0;
+  box-shadow: 0 0 0 3px rgba(13, 149, 176, 0.12);
+}
+
+.authForm button[type="submit"] {
+  margin-top: 0.5rem;
+  background: linear-gradient(135deg, #0a8da8, #0d6482);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+.authForm button[type="submit"]:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.authForm button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.authForm button[type="submit"]:disabled {
+  background: #b2d8e0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.switchMode {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  color: #5a6670;
+}
+
+.switchMode button {
+  background: none;
+  border: none;
+  color: #0d95b0;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.switchMode button:hover {
+  color: #0a7a94;
+  text-decoration: underline;
+}
+
+.error {
+  color: #991b1b;
+  background: rgba(254, 226, 226, 0.8);
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .authForm {
+    min-width: unset;
+    margin: 0 16px;
+  }
+}
