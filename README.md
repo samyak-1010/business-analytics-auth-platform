@@ -2,6 +2,8 @@
 
 Full-stack multi-tenant eCommerce analytics dashboard built with TypeScript, Next.js 16, NestJS 11, and PostgreSQL 16. 📊🛒
 
+🎥 **[Watch the Demo on YouTube](https://youtu.be/2bR-lrgXddM)**
+
 ---
 
 ## ⚡️ Setup Instructions
